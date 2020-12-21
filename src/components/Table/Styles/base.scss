@@ -1,0 +1,58 @@
+$bgcolor: lightblue;
+$basebordercolor: rgba(0, 0, 0, 0.5);
+$baseheaderrowcolor: #3a3a3af6;
+$rowevencolor: rgba(99, 96, 96, 0.788);
+$rowoddcolor: rgba(58, 54, 54, 0.788);
+$hoverrowcolor: #3a3a3af6;
+
+@media
+	only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+}
+.data-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+table {
+    border-spacing: 0.5rem;
+    border-collapse: collapse;
+    white-space: nowrap;
+    color: white;
+}
+
+thead {
+    text-align: center;
+    background-color: $rowoddcolor;
+}
+
+tr {
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: $rowevencolor;
+}
+
+tr:hover {
+    background-color: $hoverrowcolor;
+}
+
+tr:nth-child(even) {
+    background-color: $rowoddcolor;
+}
+
+tr:hover {
+    background-color: $hoverrowcolor;
+}
+
+th, td {
+    text-align: center;
+    margin-left: 0.25rem;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 1rem;
+}
