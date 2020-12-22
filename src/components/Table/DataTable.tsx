@@ -31,18 +31,20 @@ const DataTable = <T extends {[x in string | number]: any}>(props: DataTableProp
     }) : null
 
     return (
-        <div className="data-table-container">
-            <table className={props.dark ? "dark-table " + props.size ?? "" : "light-table " + props.size ?? ""}>
-                <thead>
-                    <tr>
-                        {columnHeaders}
-                    </tr>
-                </thead>
-                <tbody className="data-rows">
-                    {rows}
-                </tbody>
-            </table>
-        </div>
+        <React.Fragment>
+            <div className="data-table-container">
+                <table className={props.dark ? "dark-table " + props.size ?? "" : "light-table " + props.size ?? ""}>
+                    <thead>
+                        <tr>
+                            {columnHeaders}
+                        </tr>
+                    </thead>
+                    <tbody className="data-rows">
+                        {rows}
+                    </tbody>
+                </table>
+            </div>
+        </React.Fragment>
     )
 }
 
