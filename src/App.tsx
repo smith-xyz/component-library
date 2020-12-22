@@ -1,4 +1,5 @@
-import DataTable, { Header } from './components/Table/DataTable'
+import CustomNavBar from './components/Navbar/CustomNavBar'
+import DataTable from './components/Table/DataTable'
 import './App.scss'
 
 const headers = [
@@ -23,6 +24,7 @@ const testData = [
 const App = () => {
   return (
     <div className="App">
+      <CustomNavBar />
       <DataTable dark headers={headers} rows={testData} size="sm" />
       <DataTable headers={headers} rows={testData} size="md" />
       <DataTable headers={headers} rows={testData} size="lg" />

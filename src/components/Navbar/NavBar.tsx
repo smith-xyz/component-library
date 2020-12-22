@@ -1,20 +1,38 @@
 import React from 'react'
 import './Styles/base.scss'
 
-const NavBar = () => {
+interface NavBarProps {
+    logoText: string
+}
+
+interface NavItemProps {
+    children?: JSX.Element | React.ReactChild | string
+}
+
+export const NavBar: React.FunctionComponent<NavBarProps> = props => {
+
     return (
-        <div className="navbar-container">
-            <nav>
-                <ul className="navbar--link">
-                    <li>Tables</li>
-                    <li>Buttons</li>
-                    <li>Selects</li>
-                    <li>Spinners</li>
-                    <li>Modals</li>
-                </ul>
-            </nav>
-        </div>
+        <React.Fragment>
+            <div className="navbar-container">
+                <nav>
+                    <header>{props.logoText}</header>
+                    <ul>
+                        {props.children}
+                    </ul>
+                </nav>
+            </div>
+        </React.Fragment>
     )
 }
 
-export default NavBar
+export const NavItem = (props: NavItemProps) => {
+
+    return (
+        <React.Fragment>
+            <div>
+                <li>{props.children}</li>
+            </div>
+        </React.Fragment>
+        
+    )
+}

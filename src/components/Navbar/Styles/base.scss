@@ -1,3 +1,27 @@
 .navbar-container {
+    position: sticky;
+    height: 3.25rem;
+
+    $navbarcolor: #1d1d1d;
+    $itemcolor: rgb(167, 167, 167);
     
+    nav {
+        width: 100%;
+        float: left;
+        margin: auto;
+        padding: 0;
+        list-style: none;
+        background-color: $navbarcolor;
+        position: relative;
+    }
+
+    h1, li, ul {
+        display: flex;
+        padding: 0.20rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: $itemcolor;
+        margin-left: 2rem;
+        position: relative;
+    }
 }
