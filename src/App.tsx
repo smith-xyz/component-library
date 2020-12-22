@@ -23,9 +23,9 @@ const testData = [
 const App = () => {
   return (
     <div className="App">
-      <DataTable headers={headers} rows={testData} style={ { size: "sm" }}/>
-      <DataTable headers={headers} rows={testData} style={ { size: "md" }}/>
-      <DataTable headers={headers} rows={testData} style={ { size: "lg" }}/>
+      <DataTable dark headers={headers} rows={testData} size="sm" />
+      <DataTable headers={headers} rows={testData} size="md" />
+      <DataTable headers={headers} rows={testData} size="lg" />
     </div>
   );
 }

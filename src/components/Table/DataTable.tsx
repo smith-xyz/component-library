@@ -8,14 +8,11 @@ export interface Header {
     label?: string 
 }
 
-interface TableStyle {
-    size: string
-}
-
 interface DataTableProps<T> {
     headers: Header[]
-    rows: any
-    style: TableStyle
+    rows: Object[]
+    size: string
+    dark?: boolean
 }
 
 const DataTable = <T extends {[x in string | number]: any}>(props: DataTableProps<T>) => {
@@ -35,13 +32,13 @@ const DataTable = <T extends {[x in string | number]: any}>(props: DataTableProp
 
     return (
         <div className="data-table-container">
-            <table className={props.style.size ?? ""}>
+            <table className={props.dark ? "dark-table " + props.size ?? "" : "light-table " + props.size ?? ""}>
                 <thead>
                     <tr>
                         {columnHeaders}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="data-rows">
                     {rows}
                 </tbody>
             </table>

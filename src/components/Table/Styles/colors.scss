@@ -1,0 +1,62 @@
+// dark theme
+.dark-table {
+    $rowoddcolor: rgba(1, 1, 3, 0.8);
+    $rowevencolor: rgba(51, 51, 51, 0.795);
+    $hoverrowcolor: #313131af;
+
+    thead {
+        background-color: $rowoddcolor;
+    }
+
+    .data-rows {
+        tr:nth-child(odd) {
+            background-color: $rowoddcolor;
+        }
+    
+        tr:nth-child(even) {
+            background-color: $rowevencolor;
+        }
+    
+        tr:hover {
+            background-color: $hoverrowcolor;
+        }
+    }
+
+    th, td {
+        margin-left: 0.25rem;
+        color: #f2f2f2;
+        text-align: left;
+        padding: 1rem;
+    }
+}
+
+// light theme
+.light-table {
+    $rowoddcolor: rgba(155, 155, 155, 0.55);
+    $rowevencolor: white;
+    $hoverrowcolor: #9e9e9eaf;
+
+    thead {
+        background-color: $rowevencolor;
+    }
+
+    .data-rows {
+        tr:nth-child(odd) {
+            background-color: $rowoddcolor;
+        }
+    
+        tr:nth-child(even) {
+            background-color: $rowevencolor;
+        }
+    
+        tr:hover {
+            background-color: $hoverrowcolor;
+        }
+    }
+
+    th, td {
+        margin-left: 0.25rem;
+        text-align: left;
+        padding: 1rem;
+    }
+}
