@@ -25,6 +25,7 @@ type Sizes = "sm" | "md" | "lg"
 const TableIndex = () => {
     const [size, setSize] = useState<Sizes>("sm")
     const [darkTheme, setDarkTheme] = useState(false)
+    const [hoverEffect, setHoverEffect] = useState(false)
 
     const sizeChangeHandler = (size: HTMLSelectElement["value"]) => {
         switch (size) {
@@ -45,13 +46,14 @@ const TableIndex = () => {
             <div className="index-options-container">
                 <h1>Set different Props!</h1>
                 <button onClick={() => setDarkTheme(!darkTheme)}>{darkTheme ? "Light Theme" : "Dark Theme"}</button>
+                <button onClick={() => setHoverEffect(!hoverEffect)}>{hoverEffect ? "Hover Off" : "Hover On"}</button>
                 <select value={size} onChange={e => sizeChangeHandler(e.target.value)}>
                     <option>sm</option>
                     <option>md</option>
                     <option>lg</option>
                 </select>
             </div>
-            <DataTable dark={darkTheme} headers={headers} rows={testData} size={size} />
+            <DataTable dark={darkTheme} headers={headers} rows={testData} size={size} hover={hoverEffect} />
         </React.Fragment>
     )
 }
