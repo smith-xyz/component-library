@@ -1,0 +1,11 @@
+.index-options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    h1, button, select {
+        margin: 0.5rem;
+    }
+}

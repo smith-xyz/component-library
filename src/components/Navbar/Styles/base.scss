@@ -3,25 +3,56 @@
     height: 3.25rem;
 
     $navbarcolor: #1d1d1d;
-    $itemcolor: rgb(167, 167, 167);
+    $itemcolor: rgba(167, 167, 167, 0.685);
+    $hoveritemcolor: white;
     
-    nav {
+    div, nav {
+        display: flex;
         width: 100%;
         float: left;
         margin: auto;
         padding: 0;
         list-style: none;
         background-color: $navbarcolor;
-        position: relative;
+        position: absolute;
     }
 
-    h1, li, ul {
-        display: flex;
-        padding: 0.20rem;
-        text-decoration: none;
-        font-weight: bold;
-        color: $itemcolor;
-        margin-left: 2rem;
+    header {
         position: relative;
+        color: $itemcolor;
+        display: flex;
+        padding: 0.1rem;
+        text-decoration: none;
+        font-weight: bolder;
+        font-size: 2rem;
+        margin: 0.25rem;
+    }
+
+    header:hover,
+    header:after {
+        color: $hoveritemcolor;
+        text-decoration: none;
+    }
+
+    ul, li {
+        display: flex;
+        padding: 0.1rem;
+        text-decoration: none;
+        color: $itemcolor;
+        margin-left: 1rem;
+        position: relative;
+
+        a {
+            text-decoration: none;
+            color: $itemcolor;
+        }
+    }
+
+    li:hover,
+    li:after,
+    a:hover,
+    a:after {
+        color: $hoveritemcolor;
+        text-decoration: none;
     }
 }

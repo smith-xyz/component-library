@@ -2,7 +2,7 @@ import React from 'react'
 import './Styles/base.scss'
 
 interface NavBarProps {
-    logoText: string
+
 }
 
 interface NavItemProps {
@@ -14,25 +14,26 @@ export const NavBar: React.FunctionComponent<NavBarProps> = props => {
     return (
         <React.Fragment>
             <div className="navbar-container">
-                <nav>
-                    <header>{props.logoText}</header>
-                    <ul>
-                        {props.children}
-                    </ul>
-                </nav>
+                <div>
+                    <nav>
+                        <ul>
+                            {props.children}
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </React.Fragment>
     )
 }
 
-export const NavItem = (props: NavItemProps) => {
+export const NavHeader = (props: NavItemProps) => (
+    <React.Fragment>
+        <header>{props.children}</header>
+    </React.Fragment>
+)
 
-    return (
-        <React.Fragment>
-            <div>
-                <li>{props.children}</li>
-            </div>
-        </React.Fragment>
-        
-    )
-}
+export const NavItem = (props: NavItemProps) => (
+    <React.Fragment>
+        <li>{props.children}</li>
+    </React.Fragment>
+)
