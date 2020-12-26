@@ -1,0 +1,11 @@
+.button-custom {
+    &-1 {
+        background: red;
+    }
+    &-2 {
+        background-color: white;
+        width: 5rem;
+        border-radius: 0.25rem;
+        background: rgba(158, 158, 158, 0.85);
+    }
+}
