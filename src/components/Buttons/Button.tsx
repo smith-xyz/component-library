@@ -4,14 +4,18 @@ import './Styles/base.scss'
 interface ButtonProps {
     name?: string
     text: string
+    color?: string
+    animate?: boolean
 }
 
 const Button = (props: ButtonProps) => {
-    const buttonType = props.name ? "button-custom-" + props.name : "button-custom-1"
 
     return (
-        <div>
-            <button className={buttonType}>{props.text}</button>
+        <div className="button-container">
+            <button className={props.animate ? "button-custom animate" : "button-custom"} 
+                    style={{ background: props.color ? props.color : "rgba(55, 226, 132, 0.8)" }}>
+                <span className="button-text">{props.text}</span>
+            </button>
         </div>
     )
 }
