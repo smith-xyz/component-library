@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Spinner, { SpinnerProps } from './LoadingSpinner'
 
 const SpinnerIndex = () => {
     const [color, setColor] = useState<SpinnerProps["color"]>(undefined)
     const [size, setSize] = useState<SpinnerProps["size"]>("md")
+    const [transparent, setTransparent] = useState(false)
 
     return (
         <React.Fragment>
@@ -15,8 +16,12 @@ const SpinnerIndex = () => {
                     <option value="md">md</option>
                     <option value="lg">lg</option>
                 </select>
+                <label htmlFor={"transparent"}>
+                    <span>Transparent?</span>
+                    <input type="checkbox" name="transparent" onChange={(e) => setTransparent(!transparent)}></input>
+                </label>  
             </div>
-            <Spinner color={color} size={size} />
+            <Spinner color={color} size={size} transparent={transparent}/>
         </React.Fragment>
     )
 }

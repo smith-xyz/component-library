@@ -17,7 +17,7 @@ const CustomNavBar = () => {
                     <Link to={"/buttons"} style={{ textDecoration: 'none' }}>Buttons</Link>
                 </NavItem>
                 <NavItem>
-                    <Link to={"/selects"} style={{ textDecoration: 'none' }}>Selects</Link>
+                    <Link to={"/forms"} style={{ textDecoration: 'none' }}>Forms</Link>
                 </NavItem>
                 <NavItem>
                     <Link to={"/spinners"} style={{ textDecoration: 'none' }}>Spinners</Link>

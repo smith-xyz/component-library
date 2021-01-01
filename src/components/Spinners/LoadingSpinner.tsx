@@ -4,6 +4,7 @@ import './Styles/base.scss'
 export interface SpinnerProps {
     color?: string
     size?: "sm" | "md" | "lg"
+    transparent?: boolean
 }
 
 const Spinner = (props: SpinnerProps) => {
@@ -17,7 +18,7 @@ const Spinner = (props: SpinnerProps) => {
         borderLeft: borderSize + " solid " + (props.color ?? "#2fc2baf5"),
         borderBottom: borderSize + " solid " + (props.color ?? "#2fc2baf5"),
         borderTop: borderSize + " solid " + (props.color ?? "#2fc2baf5"),
-        borderRight: borderSize + " solid transparent"
+        borderRight: borderSize + " solid " + (props.transparent ? "transparent" : "rgba(0, 0, 0, 0.1)")
     }
 
     return (
