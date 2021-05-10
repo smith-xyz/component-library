@@ -1,0 +1,79 @@
+/* todo not proper scss, convert */
+
+.fancy-button {
+    display:inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;    
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    position: relative;
+    background-color: #11A65B;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.fancy-button:disabled {
+    background-color: rgb(92, 92, 92);
+    cursor: not-allowed;
+}
+
+.fancy-button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0 #007bff;
+  }
+
+.fancy-button:focus:focus:not(:focus-visible) { 
+    outline: 0; 
+}
+
+.fancy-button:enabled:before {
+    content: "";
+    background: #007bff;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    transition: all 0.8s;
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.fancy-button:enabled:after {
+    content: "";
+    background-color: #11A65B;
+    display: block;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    transition: all 0.8s;
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.fancy-button:hover {
+    color: #fff;
+}
+
+.fancy-button:hover:before {
+    width: 100%;
+}
+
+.fancy-button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+}

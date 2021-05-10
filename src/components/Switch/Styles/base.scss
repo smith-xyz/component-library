@@ -1,116 +1,61 @@
-$label-color: #bbb;
-$disabled-color: #ddd;
-$toggle-color: #2F855A;
-$white: #fff;
-
 .toggle-switch {
   position: relative;
-  width: 75px;
   display: inline-block;
   vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   text-align: left;
-  
-  &-checkbox {
-    display: none;
-  }
-  &-label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border: 0 solid $label-color;
-    border-radius: 20px;
-    margin: 0;
-  }
-  &-inner {
-    display: block;
-    width: 200%;
-    margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
-    &:before,
-    &:after {
-      display: block;
-      float: left;
-      width: 50%;
-      height: 34px;
-      padding: 0;
-      line-height: 34px;
-      font-size: 14px;
-      color: $white;
-      font-weight: bold;
-      box-sizing: border-box;
-    }
-    &:before {
-      content: attr(data-yes);
-      text-transform: uppercase;
-      padding-left: 10px;
-      background-color: $toggle-color;
-      color: $white;
-    }
-  }
-  &-disabled {
-    background-color: $disabled-color;
-    cursor: not-allowed;
-    &:before {
-      background-color: $disabled-color;
-      cursor: not-allowed;
-    }
-  }
-  &-inner:after {
-    content: attr(data-no);
-    text-transform: uppercase;
-    padding-right: 10px;
-    background-color: $label-color;
-    color: $white;
-    text-align: right;
-  }
-  &-switch {
-    display: block;
-    width: 24px;
-    margin: 5px;
-    background: $white;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 40px;
-    border: 0 solid $label-color;
-    border-radius: 20px;
-    transition: all 0.3s ease-in 0s;
-  }
-  &-checkbox:checked + &-label {
-    .toggle-switch-inner {
-      margin-left: 0;
-    }
-    .toggle-switch-switch {
-      right: 0px;
-    }
-  }
-  &.small-switch {
-    width: 40px;
-    .toggle-switch-inner {
-      &:after,
-      &:before {
-        content: "";
-        height: 20px;
-        line-height: 20px;
-      }
-    }
-    .toggle-switch-switch {
-      width: 16px;
-      right: 20px;
-      margin: 2px;
-    }
+  width: 60px;
+  height: 34px;
+
+  & .switch-input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
   }
 
-  @media screen and (max-width: 991px) {
-    transform: scale(0.9);
+  & .switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: gray;
+    border-radius: 34px;
+    transition: .4s;
   }
-  @media screen and (max-width: 767px) {
-    transform: scale(0.825);
+
+  & .switch-label .switch-circle {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
   }
-  @media screen and (max-width: 575px) {
-    transform: scale(0.75);
+
+  & .switch-input:checked + .switch-label .switch-circle {
+    transform: translateX(26px)
+  }
+
+  &.small {
+    width: 30px;
+    height: 17px;
+
+    & .switch-label .switch-circle {
+      height: 13px;
+      width: 13px;
+      left: 2px;
+      bottom: 2px;
+    }
+
+    & .switch-input:checked + .switch-label .switch-circle {
+      transform: translateX(13px)
+    }
   }
 }
